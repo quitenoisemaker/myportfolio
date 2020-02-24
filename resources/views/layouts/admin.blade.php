@@ -39,10 +39,10 @@
             User
           </a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">
+            <a href="{{route('users.index')}}" class="dropdown-item">
               All user
             </a>
-            <a href="#" class="dropdown-item">
+            <a href="{{route('users.create')}}" class="dropdown-item">
               Create User
             </a>
           
