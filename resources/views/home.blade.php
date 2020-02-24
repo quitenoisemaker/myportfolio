@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+
+                    <div class="text-right" style="margin-top: -30px"><a href="{{route('users.index')}}">Goto to admin dashboard</a></div>
                 </div>
             </div>
         </div>

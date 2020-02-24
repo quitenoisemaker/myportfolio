@@ -27,13 +27,13 @@
 
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0" >
   <div class="container" style="margin: 10px">
-    <a href="index.php" class="navbar-brand">Admin</a>
+    <a href="/admin" class="navbar-brand">Admin</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"> <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item px-2">
-          <a href="#" class="nav-link ">Dashboard</a>
-        </li>
+       <!--  <li class="nav-item px-2">
+          <a href="/admin" class="nav-link ">Dashboard</a>
+        </li> -->
         <li class="nav-item dropdown mr-3">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
             User
@@ -96,15 +96,32 @@
       </ul>
 
       <ul class="navbar-nav ml-auto">
-         <li class="nav-item dropdown mr-3">
-          <a href="#" class="nav-link ">
-            Home
-          </a>
-        </li>
+         
+        @if (Auth::check())
         <li class="nav-item dropdown mr-3">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-            <i class ="fa fa-user"></i> Welcome Admin
-          </a>
+          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-user fa-fw"></i>
+
+                                    
+                                    {{ Auth::user()->name }} <span class=""></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    
+
+                                    
+                                </div>
           <div class="dropdown-menu">
            
             <a href="settings.php" class="dropdown-item">
@@ -112,8 +129,15 @@
             </a>
           
           </div>
+          @else
+
+          <li class="nav-item dropdown mr-3">
+          <a href="/" class="nav-link ">
+            Login
+          </a>
         </li>
-      
+        </li>
+      @endif
       </ul>
     </div>
   </div>

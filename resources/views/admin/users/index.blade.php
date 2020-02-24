@@ -5,6 +5,27 @@
 
 <h2>Users</h2>
 
+@if(Session::has('created_user'))
+
+<div class="alert alert-success">
+<p>{{session('created_user')}}</p>
+</div>
+@endif
+
+
+
+
+@if(Session::has('deleted_user'))
+
+<div class="alert alert-danger">
+
+<p>{{session('deleted_user')}}</p>
+
+</div>
+
+@endif
+
+
 <div class="table-responsive">
 
 <table class="table table-bordered table-hover table-dark">

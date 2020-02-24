@@ -10,6 +10,7 @@ use App\User;
 use App\role;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -60,6 +61,8 @@ class AdminUsersController extends Controller
         }
 
         User::create($input);
+
+        Session::flash('created_user', 'The user has been created');
 
         return redirect('/admin/users');
 
@@ -136,6 +139,8 @@ class AdminUsersController extends Controller
         $user=User::findOrFail($id);
 
         $user->delete();
+
+        Session::flash('deleted_user', 'The user has been deleted');
 
         return redirect('/admin/users');
     }
