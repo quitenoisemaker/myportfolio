@@ -53,10 +53,10 @@
             Posts
           </a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">
+            <a href="{{route('posts.index')}}" class="dropdown-item">
               All posts
             </a>
-            <a href="#" class="dropdown-item">
+            <a href="{{route('posts.create')}}" class="dropdown-item">
               Create post
             </a>
             <a href="#" class="dropdown-item">
@@ -65,19 +65,16 @@
           
           </div>
         </li>
-        <li class="nav-item dropdown mr-3">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+        <li class="nav-item mr-3">
+          <a href="{{route('categories.index')}}" class="nav-link" data-toggle="">
             Categories
           </a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">
+          <!-- <div class="dropdown-menu">
+            <a href="{{route('categories.index')}}" class="dropdown-item">
               All categories
             </a>
-            <a href="#" class="dropdown-item">
-              Create category
-            </a>
             
-          </div>
+          </div> -->
         </li>
           <li class="nav-item dropdown mr-3">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
