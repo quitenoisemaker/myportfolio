@@ -16,9 +16,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/portfolio', function () {
-    return view('portfolio.index');
-});
+Route::get('/portfolio', 'MyPortfolio@post');
+
+
+Route::get('/post/{id}', 'AdminPostController@post')->name('blog.post');
 
 
 Route::get('/admin', function(){
@@ -39,6 +40,10 @@ Route::resource('admin/users', 'AdminUsersController');
 Route::resource('admin/posts', 'AdminPostController');
 
 Route::resource('admin/categories', 'AdminCategoriesController');
+
+Route::resource('admin/comments', 'PostCommentsController');
+
+Route::resource('admin/comment/replies', 'CommentRepliesController');
 
 });
 

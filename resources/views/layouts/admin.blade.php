@@ -59,7 +59,7 @@
             <a href="{{route('posts.create')}}" class="dropdown-item">
               Create post
             </a>
-            <a href="#" class="dropdown-item">
+            <a href="{{route('comments.index')}}" class="dropdown-item">
               All comment
             </a>
           
