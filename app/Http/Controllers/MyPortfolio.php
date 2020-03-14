@@ -17,8 +17,17 @@ class MyPortfolio extends Controller
 
      public function post(){
 
-        $posts=post::all();
+        $posts=post::latest()->take(3)->get();
 
         return view('portfolio.index', compact('posts'));
+    }
+
+
+
+     public function allpost(){
+
+        $posts=post::latest()->paginate(5);
+
+        return view('allpost.index', compact('posts'));
     }
 }

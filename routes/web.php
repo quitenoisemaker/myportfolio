@@ -18,8 +18,12 @@ Route::get('/', function () {
 
 Route::get('/portfolio', 'MyPortfolio@post');
 
+Route::get('/allpost', 'MyPortfolio@allpost')->name('blog.allpost');
+
 
 Route::get('/post/{id}', 'AdminPostController@post')->name('blog.post');
+
+
 
 
 Route::get('/admin', function(){

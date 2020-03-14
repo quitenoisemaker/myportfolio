@@ -123,7 +123,7 @@
       
     </div>
      
-      <!-- RESUME -->
+      <!-- BLOG -->
       <div id="blog" class="collapse">
         <div class="card card-body bg-dark text-white py-5">
           <h2>My Blog</h2>
@@ -135,7 +135,7 @@
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <div class="col">
+            <div class="">
 
               @foreach($posts as $post)
 
@@ -148,15 +148,18 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted {{$post->created_at->diffForHumans()}}</p>
                 <hr>
-                <img class="img-fluid" src="{{$post->photo->file}}" alt="">
+                <a href="{{route('blog.post', $post->slug)}}" target="blank">
+                <img height="250" width="300" class="img-fluid" src="{{$post->photo->file}}" alt=""></a>
                 <hr>
                 <p>{{$post->body}}</p>
-                <a class="btn btn-primary" href="{{route('blog.post', $post->id)}}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="{{route('blog.post', $post->slug)}}" target="blank">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                <hr>
+                <hr> <br> <br>
 
              @endforeach
-               
+
+
+             <a class="btn btn-outline-primary btn-lg" href="{{route('blog.allpost')}}">View all post</a>
 
             </div>
 
