@@ -30,6 +30,10 @@
     <a href="/admin" class="navbar-brand">Admin</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"> <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
+
+      @if (Auth::check())
+
+@if (Auth::user()->isAdmin())
       <ul class="navbar-nav">
        <!--  <li class="nav-item px-2">
           <a href="/admin" class="nav-link ">Dashboard</a>
@@ -92,6 +96,32 @@
         </li>
       </ul>
 
+      @else
+
+      <ul class="navbar-nav">
+       <!--  <li class="nav-item px-2">
+          <a href="/admin" class="nav-link ">Dashboard</a>
+        </li> -->
+      
+        <li class="nav-item mr-3">
+          <a href="#" class="nav-link" data-toggle="">
+            About
+          </a>
+          <!-- <div class="dropdown-menu">
+            <a href="{{route('categories.index')}}" class="dropdown-item">
+              All categories
+            </a>
+            
+          </div> -->
+        </li>
+         
+      </ul>
+
+
+      @endif
+
+@endif
+
       <ul class="navbar-nav ml-auto">
          
         @if (Auth::check())
@@ -129,7 +159,7 @@
           @else
 
           <li class="nav-item dropdown mr-3">
-          <a href="/" class="nav-link ">
+          <a href="/login" class="nav-link ">
             Login
           </a>
         </li>

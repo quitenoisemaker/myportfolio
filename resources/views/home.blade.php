@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
 <div class="container">
@@ -16,7 +16,7 @@
 
                     You are logged in!
 
-                    <div class="text-right" style="margin-top: -30px"><a href="{{route('users.index')}}">Goto to admin dashboard</a></div>
+                    <div class="text-right" style="margin-top: -30px"><a href="{{route('home')}}">Goto to admin dashboard</a></div>
                 </div>
             </div>
         </div>

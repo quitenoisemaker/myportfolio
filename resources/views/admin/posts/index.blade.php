@@ -11,9 +11,9 @@
 		<tr>
 			<th>Id</th>
 			<th>Photo</th>
+			<th>Title</th>
 			<th>Owner</th>
 			<th>Category</th>
-			<th>Title</th>
 			<th>Body</th>
 			<th>Post link</th>
 			<th>Comments</th>
@@ -28,10 +28,11 @@
 		<tr>
 			<td>{{$post->id}}</td>
 			<td><img height="50" src="{{$post->photo ? $post->photo->file : 'no user photo'}}"></td>
-			<td><a href="{{route('posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
+			<td><a href="{{route('posts.edit', $post->id)}}">{{$post->title}}</a></td>
+			
+			<td>{{$post->user->name}}</td>
 			<td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
-			<td>{{$post->title}}</td>
-			<td>{{$post->body}}</td>
+			<td>{!! Str::limit($post->body, 130)!!}</td>
 			<td><a href="{{route('blog.post', $post->slug)}}">  View post</a></td>
 			<td><a href="{{route('comments.show', $post->id)}}">  View comment</a></td>
 			<td>{{$post->created_at->diffForHumans()}}</td>

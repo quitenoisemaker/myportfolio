@@ -5,7 +5,7 @@
 
 <head>
 
-    <title>My Admin</title>
+    <title>Blog Post</title>
    <html lang="eng">
   <meta charset="utf-8">
   <meta name="viewpoint" content="width=device-width" initial-scale="1">
@@ -21,13 +21,25 @@
      <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
 
 
+
+      <style type="text/css">
+
+
+    p,h1,h2,h3,h4{
+      font-family: Comic Sans MS;
+    }
+  
+
+  </style>
+
+
 </head>
 
 <body id="" >
 
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0" >
   <div class="container" style="margin: 10px">
-    <a href="/admin" class="navbar-brand">My Blog Post</a>
+    <a href="/" class="navbar-brand">Home</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"> <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -53,7 +65,7 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1>{{$post->title}}</h1>
+                <h1 style="color: black">{{ucfirst($post->title)}}</h1>
 
                 <!-- Author -->
                 <p class="lead">
@@ -68,12 +80,12 @@
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-fluid" src="{{$post->photo->file}}" alt="">
+                <img class="img-fluid" src="{{$post->photo ? $post->photo->file : 'no user photo'}}" alt="">
 
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead">{{$post->body}}</p>
+                <p class="lead">{!!$post->body!!}</p>
 
                 <hr>
 

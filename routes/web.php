@@ -11,12 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-Route::get('/portfolio', 'MyPortfolio@post');
+Route::get('/', 'MyPortfolio@post');
+
+
 
 Route::get('/allpost', 'MyPortfolio@allpost')->name('blog.allpost');
 
@@ -36,6 +38,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
+
 Route::group(['middleware'=>'admin'], function(){
 
 
@@ -50,5 +54,7 @@ Route::resource('admin/comments', 'PostCommentsController');
 Route::resource('admin/comment/replies', 'CommentRepliesController');
 
 });
+
+
 
 

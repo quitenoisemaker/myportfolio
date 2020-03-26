@@ -19,8 +19,12 @@ class MyPortfolio extends Controller
 
         $posts=post::latest()->take(3)->get();
 
+
+
         return view('portfolio.index', compact('posts'));
     }
+
+  
 
 
 

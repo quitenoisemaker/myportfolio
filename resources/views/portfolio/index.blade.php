@@ -23,6 +23,11 @@
     <!-- <link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
 
   <style type="text/css">
+
+
+    p,h1,h2,h3,h4{
+      font-family: Comic Sans MS;
+    }
   
 
   </style>
@@ -32,18 +37,18 @@
     <header id="main-header">
       <div class="row no-gutters">
         <div class="col-lg-4 col-md-5">
-          <img src="prof_pic/pic.jpg" class="image">
+          <img src="prof_pic/samson1.jpg" class="image">
         </div>
         <div class="col-lg-8 col-md-7">
           <div class="d-flex flex-column">
             <div class="p-5 bg-dark text-white" style="padding: 4em !important;">
               <div class="name d-flex flex-row justify-content-between align-items-center">
-                <h1 class="display-4">Ojugo Samson Ehis</h1></div>
+                <h1 class="display-4">Ojugo Samson Ehis</h1></div><br><br>
                 <div class="d-flex flex-row">
-                <div><i class="fab fa-twitter" id="fafa"></i></div>&nbsp&nbsp&nbsp&nbsp&nbsp
-                <div><i class="fab fa-facebook" id="fafa"></i></div>&nbsp&nbsp&nbsp&nbsp&nbsp
-                <div><i class="fab fa-instagram" id="fafa"></i></div>&nbsp&nbsp&nbsp&nbsp&nbsp
-                <div><i class="fab fa-github" id="fafa"></i></div>
+                <div><a href="www.twitter.com/dequietsammy"><i class="fab fa-twitter" id="fafa"></i></a></div>&nbsp&nbsp&nbsp&nbsp&nbsp
+                <div><a href="www.linkedin.com/in/samsonojugo"><i class="fab fa-linkedin" id="fafa"></i></a></div>&nbsp&nbsp&nbsp&nbsp&nbsp
+                <div><a href="www.instagram.com/samsonojugo"><i class="fab fa-instagram" id="fafa"></i></a></div>&nbsp&nbsp&nbsp&nbsp&nbsp
+                <div><a href="www.github.com/quitenoisemaker"><i class="fab fa-github" id="fafa"></i></a></div>
                 
               </div>
             </div>
@@ -55,16 +60,16 @@
                 <div class="port-item p-2 bg-dark" data-toggle="collapse" data-target="#home">
                   <i class="fa fa-home d-block" id="fafa"></i>Home
                 </div>
-                <div class="port-item p-2 bg-white text-dark" data-toggle="collapse" data-target="#resume">
+                <!-- <div class="port-item p-2 bg-white text-dark" data-toggle="collapse" data-target="#resume">
                   <i class="fa fa-graduation-cap d-block" id="fafa"></i>Resume
-                </div>
-                <div class="port-item p-2 bg-dark" data-toggle="collapse" data-target="#work">
+                </div> -->
+                <div class="port-item p-2 bg-white text-dark" data-toggle="collapse" data-target="#work">
                   <i class="fa fa-folder-open d-block" id="fafa"></i>Work
                 </div>
-                <div class="port-item p-2 bg-white text-dark" data-toggle="collapse" data-target="#blog">
-                  <i class="fa fa-folder-open d-block" id="fafa"></i>Blog
+                <div class="port-item p-2 bg-dark text-white" data-toggle="collapse" data-target="#blog">
+                  <i class="fa fa-globe d-block" id="fafa"></i>Blog
                 </div>
-                <div class="port-item p-2 bg-dark text-white"
+                <div class="port-item p-2 bg-white text-dark"
                 data-toggle="collapse" data-target="#contact">
                   <i class="fa fa-envelope d-block" id="fafa"></i>Contact
                 </div>
@@ -81,17 +86,18 @@
     <div id="home" class="collapse show">
       <div class="card card-body bg-dark text-white py-5">
         <h2>I’m Sammy,</h2>
-        <p class="lead"> I'm an IT personel expert and a Web Developer. During this years of being a developer I have learnt a lot in the application of programming language in developing applications.
-        I have worked on several projects with impressive success rates because of my focus, detailed processes, uniqueness and creative insight.
-        I’m also an experience WORDPRESS DEVELOPER, I also enjoy making WHITEBOARD ANIMATION and CHATBOT using the Watson Assistance Tools.
+        <p class="lead" style="font-family: Comic Sans MS"> a graduate of Computer Science and a Digital Marketer. I’m skilled in HTML, CSS, BOOTSTRAP, Javascript, PHP, WORDPRESS, LARAVEL and VueJs (in view). I also enjoy making CorelDraw Designs, WHITEBOARD ANIMATION, FACEBOOK MARKETING Ads and WEBSITE/BLOG content.
+        I have worked on several projects with impressive success rates. I speak and write in English fluently.
+    
  </p>
       </div>
 
       <div class="card card-body py-5">
-        <h3>My skills</h3>
-        <p> I’m skilled in HTML, CSS, BOOTSTRAP, JAVASCRIPT (jQuery), Ajax, PHP and Laravel.  </p>
+        <h3><b>Favourite Quote</b></h3>
+        <p style="font-size: 20px">"The secret of life, though, is to fall seven times and to get up eight times " </p>
+        <i>paulo coalho</i>
         <hr>
-        <h4>HTML</h4>
+        <!-- <h4>HTML</h4>
         <div class="progress mb-3">
           <div class="progress-bar bg-dark" style="width: 88%"></div>
         </div>
@@ -118,7 +124,7 @@
         <h4>Whiteboard Animation using VideoScribe</h4>
         <div class="progress mb-3">
           <div class="progress-bar bg-dark" style="width: 70%"></div>
-        </div>
+        </div> -->
       </div>
       
     </div>
@@ -141,17 +147,17 @@
 
                 <!-- First Blog Post -->
                 <h2>
-                    <a href="#">{{$post->title}}</a>
+                    <a href="#" style="color: black">{{ucfirst($post->title)}}</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">{{$post->user->name}}</a>
+                    by <a href="#">{{$post->user->name}}</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted {{$post->created_at->diffForHumans()}}</p>
                 <hr>
                 <a href="{{route('blog.post', $post->slug)}}" target="blank">
-                <img height="250" width="300" class="img-fluid" src="{{$post->photo->file}}" alt=""></a>
+                <img height="250" width="500" class="img-fluid" src="{{$post->photo ? $post->photo->file : 'no user photo'}}" alt=""></a>
                 <hr>
-                <p>{{$post->body}}</p>
+                <p>{!! Str::limit($post->body, 230)!!}</p>
                 <a class="btn btn-primary" href="{{route('blog.post', $post->slug)}}" target="blank">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr> <br> <br>
@@ -169,7 +175,7 @@
       </div>
 
       <!-- RESUME -->
-      <div id="resume" class="collapse">
+      <!-- <div id="resume" class="collapse">
         <div class="card card-body bg-dark text-white py-5">
           <h2>My Resume</h2>
           <p class="lead">As a young and motivated individual with strong communication and interpersonal skills, I have been extensively involved in my various organisation.</p>
@@ -227,72 +233,74 @@
 
         </div>
         
-      </div>
+      </div> -->
 
        <!-- WORK  -->
         <div id="work" class="collapse">
           <div class="card card-body bg-dark text-white py-5">
             <h3>My Portfolio</h3>
-            <p class="lead">Here is my portfolio which comprises of some of the works I've done.</p>
+            <p class="lead">Here is my portfolio which comprises of some of my works.</p>
           </div>
 
           <div class="card card-body py-5">
             <h3>My Designs/Works</h3>
-            <p>Some of my works which range from graphic design works, Wordpress designs, Website designs with Bootstrap, JQuery and PHP and so on.</p>
-          <div class="row">
-            <div class="col-md-3">
-              <a href="port/1.jpg" data-toggle="lightbox">
-              <img src="port/1.jpg" alt="" class="img-fluid"></a>
+
+            <!-- <p>"The secret of life, though, is to fall seven times and to get up eight times " </p> -->
+            
+          <div class="row py-3">
+            <div class="col-md-3 py-3">
+              <a href="port/7.png" data-toggle="lightbox">
+              <img src="port/7.png" alt="" class="img-fluid"></a>
             </div>
-            <div class="col-md-3"><a href="port/2.jpg" data-toggle="lightbox">
+            <div class="col-md-3 py-3"><a href="port/2.jpg" data-toggle="lightbox">
               <img src="port/2.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/3.jpg" data-toggle="lightbox">
+            <div class="col-md-3 py-3"><a href="port/3.jpg" data-toggle="lightbox">
               <img src="port/3.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/4.jpg" data-toggle="lightbox">
+            <div class="col-md-3 py-3"><a href="port/4.jpg" data-toggle="lightbox">
               <img src="port/4.jpg" alt="" class="img-fluid"></a></div>
             
           </div>
           <br>
-          <div class="row">
-            <div class="col-md-3">
+          <div class="row py-3">
+            <div class="col-md-3 py-3">
               <a href="port/5.jpg" data-toggle="lightbox">
               <img src="port/5.jpg" alt="" class="img-fluid"></a>
             </div>
-            <div class="col-md-3"><a href="port/6.jpg" data-toggle="lightbox">
+            <div class="col-md-3 py-3"><a href="port/6.jpg" data-toggle="lightbox">
               <img src="port/6.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/7.jpg" data-toggle="lightbox">
-              <img src="port/7.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/8.jpg" data-toggle="lightbox">
-              <img src="port/8.jpg" alt="" class="img-fluid"></a></div>
+            <div class="col-md-3 py-3"><a href="port/1.jpg" data-toggle="lightbox">
+              <img src="port/1.jpg" alt="" class="img-fluid"></a></div>
+            <div class="col-md-3 py-3"><a href="port/8.png" data-toggle="lightbox">
+              <img src="port/8.png" alt="" class="img-fluid"></a></div>
             
           </div>
           <br>
 
-          <div class="row">
-            <div class="col-md-3">
+          <div class="row py-3">
+            <div class="col-md-3 py-3">
               <a href="port/14.jpg" data-toggle="lightbox">
               <img src="port/14.jpg" alt="" class="img-fluid"></a>
             </div>
-            <div class="col-md-3"><a href="port/10.jpg" data-toggle="lightbox">
+            <div class="col-md-3 py-3"><a href="port/10.jpg" data-toggle="lightbox">
               <img src="port/10.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/11.jpg" data-toggle="lightbox">
+            <div class="col-md-3 py-3"><a href="port/11.jpg" data-toggle="lightbox">
               <img src="port/11.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/17.jpg" data-toggle="lightbox">
+            <div class="col-md-3 py-3"><a href="port/17.jpg" data-toggle="lightbox">
               <img src="port/17.jpg" alt="" class="img-fluid"></a></div>
             
           </div>
           <br>
-          <div class="row">
-            <div class="col-md-3">
-              <a href="port/12.jpg" data-toggle="lightbox">
-              <img src="port/12.jpg" alt="" class="img-fluid"></a>
+          <div class="row py-3">
+            <div class="col-md-3 py-3">
+              <a href="port/12.png" data-toggle="lightbox">
+              <img src="port/12.png" alt="" class="img-fluid"></a>
             </div>
-            <div class="col-md-3"><a href="port/9.jpg" data-toggle="lightbox">
-              <img src="port/9.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/15.jpg" data-toggle="lightbox">
-              <img src="port/15.jpg" alt="" class="img-fluid"></a></div>
-            <div class="col-md-3"><a href="port/13.jpg" data-toggle="lightbox">
-              <img src="port/13.jpg" alt="" class="img-fluid"></a></div>
+            <div class="col-md-3 py-3"><a href="port/9.png" data-toggle="lightbox">
+              <img src="port/9.png" alt="" class="img-fluid"></a></div>
+            <div class="col-md-3 py-3"><a href="port/15.png" data-toggle="lightbox">
+              <img src="port/15.png" alt="" class="img-fluid"></a></div>
+            <div class="col-md-3 py-3"><a href="port/13.png" data-toggle="lightbox">
+              <img src="port/13.png" alt="" class="img-fluid"></a></div>
             
           </div>
 
@@ -303,75 +311,45 @@
         <div id="contact" class="collapse">
            <div class="card card-body bg-dark text-white py-5">
              <h2>Contact</h2>
-             <p class="lead">You can get to contact me from any of the social media platform above</p>
-             <p class="lead">You can also contact me by calling these lines <a href="07051194940">07051194940</a> or <a href="08127519696">08127519696</a></p>
+
+             <p class="lead">Feel free to contact me and I will be glad to hear from you</p>
+
+             <p class="lead"><b>Whatsapp only:</b><a href="07051194940"> 07051194940</a></p>
+             
+
+              <p class="lead"><b>Email: </b><a href="samsonojugo@gmail.com">samsonojugo@gmail.com</a></p>
+            
+             
            </div>
            <div class="card card-body py-5">
              <h3>Get in touch</h3>
-             <p>Feel free to contact Us and we will be glad to hear from you</p>
+              <p class="">Do you have a project, idea or something to talk about? You can get to contact me from any of the social media platform above or through my contact details.</p>
           
-          <?php
-          if (isset($_POST['submit'])) {
-          $u_name= htmlentities($_POST['u_name']);
-          $u_email= htmlentities($_POST['u_email']);
-          $u_message= htmlentities($_POST['u_message']);
-          if (empty($u_name) || empty($u_email) || empty($u_message)) {
-           echo "<span class='alert-danger text-center'><b>One or more field is empty!</b></span>";
-              }else{
-                $to = 'ojugosamson007@gmail.com';
-                $subject = 'Contact form submitted';
-                $body = $u_name. "\n".$u_message;
-                $headers = 'From: '.$u_email;
-                if (@mail($to, $subject, $body, $headers)) {
-                  echo 'Thanks for contacting us. We\'ll be in touch soon.';
-                }else{
-                  echo "Sorry, an error occured. Please try again later.";
-                }
-              }
-              }
-          ?>
-          <br>
-          <form method="POST" action="portfolio2.php">
-            <div class="form-group">
-              <div class="input-group ">
-                <span class="input-group-addon bg-dark text-white">
-                  <i class="fa fa-user"></i>
-                </span>
-                <input type="text" name="u_name" class="form-control bg-white text-dark" placeholder="Enter your name" value="<?php if (isset($_POST['submit'])) { echo $_POST['u_name']; }?>" required="" maxlength="25">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group ">
-                <span class="input-group-addon bg-dark text-white">
-                  <i class="fa fa-envelope"></i>
-                </span>
-                <input type="email" name="u_email" class="form-control bg-white text-dark" placeholder="Enter your email" value="<?php if (isset($_POST['submit'])) { echo $_POST['u_email']; }?>" required="" maxlength="50">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group ">
-                <span class="input-group-addon bg-dark text-white">
-                  <i class="fa fa-pencil"></i>
-                </span>
-                <textarea rows="5" name="u_message" class="form-control bg-white text-dark" placeholder="Enter your message" style="resize: none;" value="<?php if (isset($_POST['submit'])) { echo $_POST['u_message']; }?>" required="" maxlength="1000"></textarea> 
-              </div>
-            </div>
-            <input type="submit" name="submit" value="submit" class="btn btn-dark btn-block btn-lg">
-          </form>
+
            </div>
         </div>
 
       <!-- FOOTER -->
       <footer id="main-footer" class="p-5 bg-dark text-white">
         <div class="row">
-          <div class="col-sm-8">
-            <a href="My resume/CV.docx" download="My Resume" class="btn btn-outline-light" style="border: 1px solid white"><i class="fa fa-cloud"></i>Download Resume</a>
+          <div class="col">
+            <!-- <a href="My resume/CV.docx" download="My Resume" class="btn btn-outline-light" style="border: 1px solid white"><i class="fa fa-cloud"></i>Download Resume</a> -->
+
+            <!-- Footer -->
+        <footer style="text-align: center;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; ojugosamson {{\Carbon\Carbon::now()->year}}</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
           </div>
 
-           <div class="col-sm-4 text-right">
+          <!--  <div class="col-sm-4 text-right">
             <a class="" href="#myPage" data-toggle="tooltip">
             <span class="fa fa-arrow-up" id="fafa" style="color: white"></span>
-          </div>
+          </div> -->
           </div>
         <div class="row">
          
